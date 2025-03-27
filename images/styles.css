@@ -1,0 +1,359 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f1; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333; /* Dark text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+/* Sticky Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #3498db; /* Warm blue */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Increased padding */
+    z-index: 1001; /* Above everything */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left .title {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between title and search */
+}
+
+.u1 {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.u1 li {
+    margin-right: 15px;
+}
+
+.search {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    width: 450px; /* Adjusted width */
+}
+
+.search:focus {
+    border-color: #3498db; /* Change border color on focus */
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for button hover */
+}
+
+.btn-light {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Dark text */
+}
+
+.btn-dark {
+    background-color: #343a40; /* Dark background */
+    color: white; /* White text */
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea; /* Light hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btn-dark:hover {
+    background-color: #495057; /* Dark hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Sticky Sidebar */
+.Sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px; /* Adjusted for navbar height */
+    width: 250px;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+    background: #34495e; /* Dark gray for sidebar */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.u2 {
+    list-style: none;
+    padding: 0;
+}
+
+.u2 li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for hover */
+}
+
+.u2 li:hover {
+    background-color: #2c3e50; /* Darker gray on hover */
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Main Content Wrapper */
+.main-content-wrapper {
+    display: flex;
+    margin-left: 250px; /* Space for the sidebar */
+    padding: 80px 20px 20px; /* Top padding for navbar */
+    flex-grow: 1;
+}
+
+/* Main Content */
+.container {
+    flex: 3;
+    margin-left: 20px; /* Added left margin */
+    padding: 30px; /* Increased padding */
+    background: #313030; /* White background for main content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.heading {
+    font-size: 24px; /* Increased font size for heading */
+    margin-bottom: 20px;
+    color: #e6ecf2; /* Dark text color for heading */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below buttons */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted min width for cards */
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff; /* White background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for shadow */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.card-body {
+    padding: 20px;
+    color: #333; /* Dark text color for card content */
+}
+
+/* Icons in Top-Left */
+.icon-container {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* Changed from right to left */
+    width: 40px;
+    height: 40px;
+}
+
+/* Card Image Inside */
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Card Content */
+.card-body {
+    padding: 20px;
+}
+
+/* Side Content (Announcements & Trending) */
+.side-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.announcements {
+    background: #e1a5dd; /* Light purple for announcements */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Increased padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.trending {
+    background: #f1c40f; /* Warm yellow for trending */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Increased padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.announcement-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+}
+
+.trending .trend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.trending .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #34495e; /* Warm dark gray */
+    color: #ffffff; /* White text */
+    margin-top: auto;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* Additional Styles for Responsiveness */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-left, .nav-right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .search {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .row {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+
+    .card {
+        margin: 0 10px; /* Add margin for better spacing */
+    }
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below buttons */
+}
+
+.new, .upload, .share {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for button hover */
+}
+
+.new {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+}
+
+.new:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.upload {
+    background-color: #03A9F4; /* Blue background */
+    color: white; /* White text */
+}
+
+.upload:hover {
+    background-color: #0288D1; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.share {
+    background-color: #FF9800; /* Orange background */
+    color: white; /* White text */
+}
+
+.share:hover {
+    background-color: #FF8A3D; /* Darker orange on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Card Links - Remove Underline */
+.card a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+/* Card Links Hover Effect */
+.card a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover for better UX */
+}
